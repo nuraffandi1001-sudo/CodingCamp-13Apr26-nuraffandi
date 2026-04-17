@@ -1,0 +1,548 @@
+/* =============================================
+   CSS CUSTOM PROPERTIES — LIGHT THEME (default)
+   ============================================= */
+:root {
+  --color-bg: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef1f6;
+  --color-border: #d1d9e0;
+  --color-text-primary: #1a1d23;
+  --color-text-secondary: #5a6270;
+  --color-accent: #4f6ef7;
+  --color-accent-hover: #3a57e8;
+  --color-danger: #e53e3e;
+  --color-success: #38a169;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.75rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  --transition: 0.2s ease;
+}
+
+/* =============================================
+   CSS CUSTOM PROPERTIES — DARK THEME
+   ============================================= */
+[data-theme="dark"] {
+  --color-bg: #0f1117;
+  --color-surface: #1a1d27;
+  --color-surface-alt: #252836;
+  --color-border: #2e3347;
+  --color-text-primary: #e8eaf0;
+  --color-text-secondary: #8b92a8;
+  --color-accent: #6b84f8;
+  --color-accent-hover: #8499fa;
+  --color-danger: #fc6868;
+  --color-success: #4eca7e;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-width: 320px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.app-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+}
+
+.app-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* =============================================
+   BALANCE SECTION CARD
+   ============================================= */
+.balance-section {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--spacing-md);
+}
+
+.balance-display {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.balance-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.balance-amount {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.2;
+}
+
+/* =============================================
+   THEME TOGGLE BUTTON
+   ============================================= */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 44px;
+  min-height: 44px;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-border);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   MAIN LAYOUT — mobile-first single column
+   ============================================= */
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* =============================================
+   SECTION CARDS
+   ============================================= */
+.section {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px var(--color-shadow);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.section-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.subsection-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+/* =============================================
+   FORM ELEMENTS
+   ============================================= */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-height: 44px;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  transition: border-color var(--transition), background-color var(--transition);
+  appearance: auto;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(79, 110, 247, 0.15);
+}
+
+input[type="text"].invalid,
+input[type="number"].invalid,
+select.invalid {
+  border-color: var(--color-danger);
+}
+
+.field-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+  min-height: 1.2em;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  min-height: 44px;
+  min-width: 44px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), opacity var(--transition);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-border);
+}
+
+.btn-danger {
+  background-color: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.btn-danger:hover {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+
+/* =============================================
+   CUSTOM CATEGORY SUB-FORM
+   ============================================= */
+.custom-category-form {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.custom-category-form .subsection-title {
+  text-align: center;
+}
+
+/* =============================================
+   TRANSACTION LIST
+   ============================================= */
+.list-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-list {
+  flex: 1;
+  min-height: 200px;
+  max-height: 520px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  /* Scrollbar — light mode */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.transaction-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transaction-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.transaction-list::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 99px;
+}
+
+/* Scrollbar — dark mode */
+[data-theme="dark"] .transaction-list {
+  scrollbar-color: var(--color-border) transparent;
+}
+
+[data-theme="dark"] .transaction-list::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition);
+}
+
+.transaction-item:hover {
+  background-color: var(--color-border);
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.transaction-amount {
+  font-weight: 700;
+  color: var(--color-accent);
+  white-space: nowrap;
+  margin-right: var(--spacing-sm);
+}
+
+/* =============================================
+   CHART
+   ============================================= */
+.chart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+#spending-chart {
+  max-width: 320px;
+  max-height: 320px;
+}
+
+/* =============================================
+   MONTHLY SUMMARY
+   ============================================= */
+.month-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.month-group:last-child {
+  margin-bottom: 0;
+}
+
+.month-heading {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.month-category-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-xs) 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.month-category-row span:last-child {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* =============================================
+   EMPTY STATES
+   ============================================= */
+.empty-state {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-lg) 0;
+}
+
+.chart-empty-state {
+  position: absolute;
+}
+
+/* =============================================
+   RESPONSIVE — ≥ 768px: two-column layout
+   ============================================= */
+@media (min-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr 1fr;
+    padding: var(--spacing-xl);
+  }
+
+  .balance-section {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .form-section {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .list-section {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: stretch;
+  }
+
+  .chart-section {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .summary-section {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — ≥ 1280px: wider content area
+   ============================================= */
+@media (min-width: 1280px) {
+  .app-main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .balance-section {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .form-section {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .list-section {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: stretch;
+  }
+
+  .chart-section {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .summary-section {
+    grid-column: 3;
+    grid-row: 3;
+  }
+}
